@@ -661,3 +661,265 @@ tbody tr:last-child td {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+
+
+/* Header actions and theme toggle */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 43px;
+  padding: 10px 14px !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  background: var(--surface) !important;
+  color: var(--fg) !important;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--brand) !important;
+}
+
+.theme-toggle span:first-child {
+  font-size: 17px;
+}
+
+/* Footer */
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 42px;
+  padding: 22px 12px 8px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.footer-heart {
+  color: #ef476f;
+  font-size: 15px;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: var(--fg);
+  transition: color 0.2s ease, background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.github-link:hover {
+  color: var(--brand);
+  background: rgba(129, 140, 248, 0.13);
+  transform: translateY(-2px);
+}
+
+/* Premium dark theme */
+.app.dark-mode {
+  --bg: #0b1020;
+  --fg: #edf2ff;
+  --muted: #9ba8c1;
+  --line: #28334b;
+  --brand: #786bff;
+  --brand-hover: #6555f5;
+  --danger: #fb7185;
+  --surface: #151e32;
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+
+  color: var(--fg);
+  background:
+    radial-gradient(
+      ellipse at 12% 0%,
+      rgba(99, 102, 241, 0.13),
+      transparent 38%
+    ),
+    var(--bg);
+}
+
+.dark-mode header {
+  border-bottom-color: var(--line);
+}
+
+.dark-mode h1,
+.dark-mode .panel h3,
+.dark-mode .card-value,
+.dark-mode .bar-count {
+  color: var(--fg);
+}
+
+.dark-mode .card,
+.dark-mode .panel,
+.dark-mode table,
+.dark-mode .modal,
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea,
+.dark-mode button:not(.tab) {
+  background-color: var(--surface);
+  color: var(--fg);
+  border-color: var(--line);
+}
+
+.dark-mode .card::before {
+  background: linear-gradient(90deg, #786bff, #b0a7ff);
+}
+
+.dark-mode nav {
+  background: #10182a;
+  border-color: var(--line);
+}
+
+.dark-mode .tab {
+  color: #bac5da;
+}
+
+.dark-mode .tab.active {
+  background: var(--brand);
+  color: #fff;
+}
+
+.dark-mode .theme-toggle:hover,
+.dark-mode button:not(.tab):hover:not(:disabled) {
+  border-color: var(--brand) !important;
+}
+
+.dark-mode button.primary,
+.dark-mode button.primary:not(.tab) {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.dark-mode .bar-track {
+  background: #27324a;
+}
+
+.dark-mode th {
+  background: #10182a;
+  color: #aab7cf;
+  border-color: var(--line);
+}
+
+.dark-mode td,
+.dark-mode ul.plain li {
+  border-color: var(--line);
+  color: #dce5f7;
+}
+
+.dark-mode tbody tr:hover {
+  background: #202a44;
+}
+
+.dark-mode .badge.APPLIED {
+  background: #1e3158;
+  color: #a9c6ff;
+}
+
+.dark-mode .badge.SCREENING {
+  background: #49391d;
+  color: #ffdc8a;
+}
+
+.dark-mode .badge.INTERVIEW {
+  background: #36275f;
+  color: #cbbcff;
+}
+
+.dark-mode .badge.OFFER {
+  background: #153b49;
+  color: #91e9f7;
+}
+
+.dark-mode .badge.HIRED {
+  background: #164333;
+  color: #8be7b3;
+}
+
+.dark-mode .badge.REJECTED {
+  background: #4c2431;
+  color: #ffabb8;
+}
+
+.dark-mode .notes {
+  background: #10182a;
+  color: #dce5f7;
+  border-color: var(--line);
+}
+
+.dark-mode .error {
+  background: #401d2a;
+  color: #ffb4c0;
+  border-color: #743143;
+}
+
+.dark-mode .modal-bg {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.dark-mode .modal label {
+  color: var(--muted);
+}
+
+.dark-mode .bar-label {
+  color: var(--muted);
+}
+
+.dark-mode .app-footer {
+  border-top-color: var(--line);
+  color: var(--muted);
+}
+
+.dark-mode .github-link {
+  color: var(--fg);
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #8290aa;
+}
+
+@media (max-width: 720px) {
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .header-actions nav {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .theme-toggle {
+    padding: 9px 10px !important;
+  }
+
+  .theme-label {
+    display: none;
+  }
+
+  .app-footer {
+    margin-top: 28px;
+  }
+}
