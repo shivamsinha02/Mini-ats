@@ -4,6 +4,10 @@ Applicant Tracking System to manage candidates, hiring stages, search and dashbo
 
 **Stack:** Spring Boot 3 (Java 17) · PostgreSQL 16 · React 18 (Vite) · Docker Compose
 
+## 🚀 Live Demo
+
+**Try Mini ATS here:** [https://mini-ats-frontend-7fiz.onrender.com/](https://mini-ats-frontend-7fiz.onrender.com/)
+
 ## Run it
 
 ```bash
