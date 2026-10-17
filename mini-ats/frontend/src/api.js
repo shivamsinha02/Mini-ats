@@ -23,6 +23,7 @@ const qs = (o) =>
 
 export const api = {
   list: (params) => req('/candidates?' + qs(params)),
+  get: (id) => req(`/candidates/${id}`),
   create: (body) =>
     req('/candidates', { method: 'POST', body: JSON.stringify(body) }),
   update: (id, body) =>

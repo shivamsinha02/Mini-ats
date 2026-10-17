@@ -10,13 +10,14 @@ export default function CandidateDetail({ id, onClose, onChanged }) {
   const [editing, setEditing] = useState(false);
 
   const loadCandidate = useCallback(async () => {
-    try {
-      const res = await fetch(`/api/candidates/${id}`);
-      if (!res.ok) throw new Error('Candidate not found');
-      setC(await res.json());
-      setHist(await api.history(id));
-    } catch (e) { setErr(e.message); }
-  }, [id]);
+  try {
+    setErr('');
+    setC(await api.get(id));
+    setHist(await api.history(id));
+  } catch (e) {
+    setErr(e.message);
+  }
+}, [id]);
 
   useEffect(() => { loadCandidate(); }, [loadCandidate]);
 
